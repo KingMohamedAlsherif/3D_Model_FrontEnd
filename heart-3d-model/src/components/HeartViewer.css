@@ -1,0 +1,177 @@
+/* HeartViewer.css - Styles for the 3D heart viewer application */
+
+/* Global styles */
+.heart-viewer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+  background-color: #121212;
+}
+
+/* Header styles */
+.viewer-header {
+  padding: 1.5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.viewer-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.viewer-header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Main content area */
+.viewer-content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+/* Scene container - holds the 3D canvas */
+.scene-container {
+  flex: 3;
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Overlay with instructions */
+.scene-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  pointer-events: none;
+}
+
+.instructions {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.instructions p {
+  margin: 5px 0;
+}
+
+/* Control panel */
+.control-panel {
+  flex: 1;
+  min-width: 250px;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+.control-panel h2 {
+  margin-top: 0;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.control-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.control-buttons button {
+  padding: 12px 15px;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.control-buttons button:hover {
+  background-color: #3a3a3a;
+}
+
+.control-buttons button.active {
+  background-color: #4a4a9a;
+}
+
+.model-info {
+  margin-top: 2rem;
+}
+
+.model-info h3 {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.model-info p {
+  line-height: 1.6;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.viewer-footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0.7;
+}
+
+/* Fullscreen mode */
+.heart-viewer.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .viewer-content {
+    flex-direction: column;
+  }
+  
+  .scene-container {
+    flex: 1;
+    min-height: 60vh;
+  }
+  
+  .control-panel {
+    min-width: 100%;
+    max-height: 40vh;
+  }
+  
+  .viewer-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Loading indicator */
+.loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
